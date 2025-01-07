@@ -21,20 +21,14 @@ poetry env remove <environment-name-as-listed>
 ## Poetry commands
 
 ```bash
-# Creating a project
-poetry run django-admin startproject <project-name> .
-
-# Creating an app
-poetry run django-admin startapp app
-
-# Running Django app
-poetry run python manage.py runserver
-
-# Migrations
-poetry run python manage.py migrate
-
-# Create super user
-poetry run python manage.py createsuperuser
+poetry-runserver
+poetry-makemigrations
+poetry-migrate
+poetry-shell
+poetry-test
+poetry-createsuperuser
+poetry-startapp <app-name>
+poetry-startproject <project-name> <location>
 ```
 
 ## Using venv instead of poetry
@@ -53,11 +47,4 @@ python -m pip install Django
 deactivate
 # or
 venv-exit
-```
-
-### Aliases
-
-```bash
-alias venv-enter="source .venv/bin/activate"
-alias venv-exit="deactivate"
 ```
