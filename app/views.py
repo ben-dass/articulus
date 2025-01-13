@@ -1,4 +1,22 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from app.forms import CreateArticleForm
+from app.models import Article
+
 
 def home(request):
-    return HttpResponse("Hello, World!")
+    articles = Article.objects.all()
+    return render(
+        request,
+        "app/home.html",
+        {
+            "articles": articles,
+        },
+    )
+
+
+def create_article(request):
+    if request.method == "POST":
+        pass
+    else:
+        form = CreateArticleForm()
+    return render(request, "app/create_article.html", {"form": form})
