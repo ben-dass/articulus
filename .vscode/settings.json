@@ -1,12 +1,5 @@
 {
-    "emmet.includeLanguages": {
-        "django-html": "html"
-    },
-    "files.associations": {
-        "**/*.html": "html",
-        "**/templates/**/*.html": "django-html",
-        "**/templates/**/*": "django-txt",
-        "**/requirements{/**,*}.{txt,in}": "pip-requirements",
-    },
-    "python.languageServer": "Pylance",
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python-envs.defaultPackageManager": "ms-python.python:pip",
+  "python-envs.pythonProjects": []
 }

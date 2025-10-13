@@ -2,7 +2,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-d&$dov!u(t(=ul+oz2=v+p-exlgka_3-95=uxyx5smv&ute4fa"
+SECRET_KEY = "django-insecure-$t6ow!_bw^&1o8e2zo-&x-v012$4!a&1_id9=fb60fuw&rftd+"
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -71,14 +72,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = "en-us"
+
 TIME_ZONE = "UTC"
+
 USE_I18N = True
+
 USE_TZ = True
 
-
 STATIC_URL = "static/"
-
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

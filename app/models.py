@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 ARTICLE_STATUS = (
-    ("draft", "Draft"),
-    ("in_progress", "In Progress"),
-    ("published", "Published"),
+    ("draft", "draft"),
+    ("inprogress", "in progress"),
+    ("published", "published"),
 )
 
 
@@ -17,10 +17,6 @@ class Article(models.Model):
     content = models.TextField(blank=True, default="")
     word_count = models.IntegerField()
     twitter_post = models.TextField(blank=True, default="")
-    status = models.CharField(
-        max_length=20,
-        choices=ARTICLE_STATUS,
-        default="draft",
-    )
+    status = models.CharField(max_length=20, choices=ARTICLE_STATUS, default="draft")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
