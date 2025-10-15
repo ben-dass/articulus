@@ -1,6 +1,7 @@
 {% extends "app/base.html" %}
 
 {% block content %}
+
 <h1>Update Article</h1>
 <p>Last edited on {{ article.updated_at | date:"jS F Y" }}</p>
 <form method="POST">
@@ -8,4 +9,8 @@
   {{ form.as_p }}
   <button type="Submit">Save</button>
 </form>
+
+<a href="{% url 'home' %}">Back to list</a>
+<a href="{% url 'delete_article' article.id %}">Delete article</a>
+
 {% endblock content %}
