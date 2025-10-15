@@ -11,7 +11,7 @@
       {% for article in articles %}
         <li>
           <a href="{% url 'update_article' article.id %}">
-            {{ article.title }} with {{ article.word_count }} words.
+            {{ article.title }} with {{ article.word_count }} word{{ article.word_count | pluralize }}.
           </a>
         </li>
       {% endfor %}
