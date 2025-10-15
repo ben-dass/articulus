@@ -1,0 +1,2 @@
+FROM python:3.14-bullseye
+ENV PYTHONUNBUFFERED=1
