@@ -28,6 +28,21 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+if DEBUG:
+    INSTALLED_APPS += ["debug_toolbar"]
+    MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+
+    import socket
+
+    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS = [ip[:-1] + "1" for ip in ips] + ["127.0.0.1"]
+
+    # If still doesn't work, uncomment the following, it will display a bunch of info in the terminal. Look for REMOTE_ADDR
+    # DEBUG_TOOLBAR_CONFIG = {
+    #     "SHOW_TOOLBAR_CALLBACK": lambda request: print(request.META)
+    # }
+    INTERNAL_IPS += ["192.168.65.1"]
+
 ROOT_URLCONF = "articulus.urls"
 
 TEMPLATES = [
