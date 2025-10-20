@@ -48,3 +48,10 @@ deactivate
 # or
 venv-exit
 ```
+
+## Docker commands
+
+```bash
+docker build -t djangocourse .
+docker run -p 8005:8000 --name djangocourse -v "$(pwd):/code"  djangocourse
+```
