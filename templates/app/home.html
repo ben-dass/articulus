@@ -1,8 +1,16 @@
 {% extends "app/base.html" %}
+{% load humanize %}
 
 {% block content %}
 
   <h1>Articles</h1>
+
+  <p>
+    You have created {{ user.article_count | intcomma }} 
+    article{{ user.article_count | plurailze }} 
+    and written {{ user.written_words | intcomma }} 
+    word{{ user.written_words | plurailze }}.
+  </p>
 
   <a href="{% url 'create_article' %}">Create article</a>
 
