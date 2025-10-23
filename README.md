@@ -54,4 +54,14 @@ venv-exit
 ```bash
 docker build -t djangocourse .
 docker run -p 8005:8000 --name djangocourse -v "$(pwd):/code"  djangocourse
+
+docker compose exec web poetry run python manage.py migrate
+docker compose exec db psql -U postgres
+
+docker compose up -d
+docker compose up --build
+docker compose up --build --force-recreate --no-deps web
+docker compose down -v
+docker image ls
+docker rmi < image-id >
 ```
