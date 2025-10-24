@@ -2,13 +2,22 @@
 
 {% block content %}
 
-<h1>Delete Article</h1>
-<p>Are you sure you want to delete "{{ article.title }}"?</p>
-<form method="POST">
-  {% csrf_token %}
-  <button type="Submit">Delete</button>
-</form>
+  <main class="max-w-2xl mx-auto flex flex-col items-center mt-10">
 
-<a href="{% url 'home' %}">No, take me back</a>
+    <h1 class="subtitle mb-2">Delete Article</h1>
+
+    <p class="text-lg mb-6">Are you sure you want to delete "{{ article.title }}"?</p>
+
+    <form method="POST" class="flex items-center gap-4">
+      {% csrf_token %}
+      <button class="button danger" type="Submit">Yes, delete it</button>
+      <a class="button secondary flex flex-row gap-1" href="{% url 'home' %}">
+        {% include "svgs/arrow-left.svg" with class="" %}
+        No, take me back
+      </a>
+    </form>
+
+
+  </main>
 
 {% endblock content %}

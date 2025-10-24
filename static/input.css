@@ -10,11 +10,11 @@
 }
 
 .button {
-  @apply font-medium px-4 py-2 rounded-md;
+  @apply font-medium px-4 py-2 rounded-md shadow-sm border;
 }
 
 .primary {
-  @apply shadow-sm border-emerald-700 text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500;
+  @apply border-emerald-700  text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500;
 }
 
 .secondary {
@@ -22,5 +22,5 @@
 }
 
 .danger {
-  @apply shadow-sm border-red-400 text-red-800 bg-red-200 hover:bg-red-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-red-200;
+  @apply border-red-400 text-red-800 bg-red-200 hover:bg-red-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-red-200;
 }
