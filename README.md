@@ -52,8 +52,8 @@ venv-exit
 ## Docker commands
 
 ```bash
-docker build -t djangocourse .
-docker run -p 8005:8000 --name djangocourse -v "$(pwd):/code"  djangocourse
+docker build -t articulus .
+docker run -p 8005:8000 --name articulus -v "$(pwd):/code"  articulus
 
 docker compose exec web poetry run python manage.py migrate
 docker compose exec db psql -U postgres
@@ -64,4 +64,13 @@ docker compose up --build --force-recreate --no-deps web
 docker compose down -v
 docker image ls
 docker rmi < image-id >
+```
+
+## TailwindCSS install & use
+
+```bash
+npm i tailwindcss @tailwindcss/cli
+npx @tailwindcss/cli -i static/input.css -o static/output.css
+
+npx @tailwindcss/cli -i static/input.css -o static/output.css --watch
 ```
