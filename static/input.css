@@ -38,3 +38,7 @@ textarea {
 textarea:focus {
   @apply ring-1 ring-emerald-500 border-emerald-500;
 }
+
+.form-field input {
+  @apply w-full rounded-md p-2;
+}
