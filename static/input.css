@@ -25,6 +25,10 @@
   @apply border-red-400 text-red-800 bg-red-200 hover:bg-red-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-red-200;
 }
 
+.error {
+  @apply p-2 my-2 mb-6 text-sm text-red-700 bg-red-50 rounded-md border-red-300 border;
+}
+
 .EasyMDEContainer,
 textarea {
   @apply rounded-md border-gray-200 border-2 text-base leading-6;
@@ -41,4 +45,8 @@ textarea:focus {
 
 .form-field input {
   @apply w-full rounded-md p-2;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
 }
