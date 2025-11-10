@@ -29,7 +29,7 @@
               class="text-2xl flex items-center"
               href="{% url 'update_article' article.id %}">
               {{ article.title }}
-              <span class="ml-2 px-2 py-1 text-xs rounded-sm uppercase bg-gray-200">{{ article.status }}</span>
+              <span class="ml-2 px-2 py-1 text-xs rounded-sm uppercase bg-gray-200 article-status-{{article.status}}">{{ article.status }}</span>
             </a>
             <p class="text-sm">
               {{ article.word_count }} word{{ article.word_count | pluralize }}
