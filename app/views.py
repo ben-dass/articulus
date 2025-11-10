@@ -1,6 +1,10 @@
+from typing import Any
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from app.models import Article
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
@@ -44,3 +48,9 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().creator
+
+    def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        messages.success(
+            request, "Article deleted successfully.", extra_tags="destructive"
+        ),
+        return super().post(request, *args, **kwargs)
