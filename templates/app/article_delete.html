@@ -12,10 +12,10 @@
 
     <p class="text-lg mb-6">Are you sure you want to delete "{{ article.title }}"?</p>
 
-    <form method="POST" class="flex items-center gap-4">
+    <form method="POST" class="flex items-center gap-4" action="{% url 'delete_article' article.id %}">
       {% csrf_token %}
       <button class="button danger" type="Submit">Yes, delete it</button>
-      <a class="button secondary flex flex-row gap-1" href="{% url 'home' %}">
+      <a class="button secondary flex flex-row gap-1" href="{% url 'update_article' article.id %}">
         {% include "svgs/arrow-left.svg" with class="" %}
         No, take me back
       </a>

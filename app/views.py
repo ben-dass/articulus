@@ -1,3 +1,4 @@
+import time
 from typing import Any
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
@@ -17,6 +18,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
     paginate_by = 5
 
     def get_queryset(self) -> QuerySet[Any]:
+        time.sleep(2)
         search = self.request.GET.get("search")
         queryset = super().get_queryset().filter(creator=self.request.user)
 
@@ -24,6 +26,10 @@ class ArticleListView(LoginRequiredMixin, ListView):
             queryset = queryset.filter(title__search=search)
 
         return queryset.order_by("-created_at")
+
+
+class ArticleResultsView(ArticleListView):
+    template_name = "app/article_results.html"
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
